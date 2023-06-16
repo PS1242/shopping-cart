@@ -1,0 +1,12 @@
+.home-page {
+  display: flex;
+}
+
+.products-page {
+  flex: .75;
+}
+
+.cart-page {
+  border-left: 1px solid #D8DEE9;
+  flex: .25;
+}

@@ -1,0 +1,13 @@
+.heading {
+  color: #3B4252;
+  padding: 3em;
+  text-align: center;
+}
+
+.productsContainer {
+  padding: 2em;
+  display: flex;
+  gap: 5em;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -1,0 +1,16 @@
+.heading {
+  padding: 3em;
+  color: #4C566A;
+  text-align: center;
+}
+
+.cartItems {
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.total {
+  padding: 3em;
+}

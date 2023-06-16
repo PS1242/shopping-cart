@@ -1,0 +1,23 @@
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+}
+
+.cartItemContainer {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.controls {
+  display: flex;
+  gap: 1em;
+}
+
+.controls > button {
+  border: none;
+  padding: 4px 8px;
+  font-size: 1em;
+  cursor: pointer;
+}

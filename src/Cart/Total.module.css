@@ -1,0 +1,15 @@
+.checkoutSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.checkoutButton {
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #5E81AC;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
