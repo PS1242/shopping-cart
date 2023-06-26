@@ -5,7 +5,34 @@ import CartItem from "./CartItem";
 import Total from "./Total";
 
 function Cart() {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, setCartItems, setProducts, products } =
+    useContext(CartContext);
+
+  const increaseQuantity = (id) => {
+    const updatedData = cartItems.map((item) => ({
+      ...item,
+      quantity: item.id === id ? item.quantity + 1 : item.quantity,
+    }));
+    setCartItems(updatedData);
+  };
+
+  const decreaseQuantity = (id, quantity) => {
+    // If quantity is only 1, remove this item from cart
+    if (quantity === 1) {
+      const updatedData = products.map((item) => ({
+        ...item,
+        addedToCart: item.id === id ? false : item.addedToCart,
+      }));
+      setProducts(updatedData);
+      setCartItems((items) => items.filter((item) => item.id !== id));
+    } else {
+      const updatedData = cartItems.map((item) => ({
+        ...item,
+        quantity: item.id === id ? item.quantity - 1 : item.quantity,
+      }));
+      setCartItems(updatedData);
+    }
+  };
 
   return (
     <>
@@ -14,11 +41,16 @@ function Cart() {
       </div>
       <div className={styles.cartItems}>
         {cartItems.map((item) => (
-          <CartItem key={item.id} data={item} />
+          <CartItem
+            key={item.id}
+            data={item}
+            increaseQuantity={increaseQuantity}
+            decreaseQuantity={decreaseQuantity}
+          />
         ))}
       </div>
       <div className={styles.total}>
-        <Total />
+        <Total cartItems={cartItems} />
       </div>
     </>
   );

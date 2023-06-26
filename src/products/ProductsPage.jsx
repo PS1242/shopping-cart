@@ -2,7 +2,6 @@ import styles from "./ProductsPage.module.css";
 import Products from "./Products/Products";
 
 function ProductsPage() {
-
   return (
     <>
       <div className={styles.heading}>
