@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Total.module.css";
 
 function Total({ cartItems: data }) {
@@ -10,11 +11,15 @@ function Total({ cartItems: data }) {
     <>
       {data.length > 0 ? (
         <div className={styles.checkoutSection}>
-          <p className={styles.totalText}>Total: {total}</p>
+          <p className={styles.totalText} data-testid="total-amount">
+            Total: ${total}
+          </p>
           <button className={styles.checkoutButton}>Checkout</button>
         </div>
       ) : (
-        <p style={{ color: "#B48EAD" }}>Cart is empty</p>
+        <p style={{ color: "#B48EAD" }} data-testid="empty-cart">
+          Cart is empty
+        </p>
       )}
     </>
   );

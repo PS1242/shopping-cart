@@ -2,7 +2,7 @@ import { useContext } from "react";
 import styles from "./Cart.module.css";
 import { CartContext } from "../App";
 import CartItem from "./CartItem";
-import Total from "./Total";
+import Total from "./total/Total";
 
 function Cart() {
   const { cartItems, setCartItems, setProducts, products } =
