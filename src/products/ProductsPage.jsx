@@ -1,5 +1,5 @@
 import styles from "./ProductsPage.module.css";
-import Products from "./Products/Products";
+import Products from "./Products";
 
 function ProductsPage() {
   return (
