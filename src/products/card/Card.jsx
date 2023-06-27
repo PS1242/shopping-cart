@@ -7,8 +7,10 @@ function Card({ data, addToCart }) {
       <div className={styles.imageContainer}>
         <img src={data.thumbnail} alt="" className={styles.productImage} />
       </div>
-      <p className={styles.productTitle}>{data.title}</p>
-      <p>${data.price}</p>
+      <p className={styles.productTitle} data-testid="product-title">
+        {data.title}
+      </p>
+      <p data-testid="product-price">${data.price}</p>
       <button
         type="button"
         className={styles.addToCartButton}

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Card from "./Card";
+import Card from "./card/Card";
 import { CartContext } from "../provider/CartProvider";
 
 function Products() {
