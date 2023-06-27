@@ -1,7 +1,8 @@
+import React from "react";
 import { useContext } from "react";
 import styles from "./Cart.module.css";
-import { CartContext } from "../App";
-import CartItem from "./CartItem";
+import { CartContext } from "../provider/CartProvider";
+import CartItem from "./cartItem/CartItem";
 import Total from "./total/Total";
 
 function Cart() {

@@ -1,39 +1,20 @@
-import { createContext, useEffect, useState } from "react";
 import ProductsPage from "./products/ProductsPage";
 import Cart from "./cart/Cart";
-import { getProducts } from "./api/api";
 import "./App.css";
-
-export const CartContext = createContext();
+import CartProvider from "./provider/CartProvider";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
-
-  const fetchProducts = async () => {
-    const resp = await getProducts("https://dummyjson.com/products");
-    setProducts(resp.products.map((item) => ({ ...item, addedToCart: false })));
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
   return (
-    <>
-      <CartContext.Provider
-        value={{ products, setProducts, cartItems, setCartItems }}
-      >
-        <div className="home-page">
-          <div className="products-page">
-            <ProductsPage />
-          </div>
-          <div className="cart-page">
-            <Cart />
-          </div>
+    <CartProvider>
+      <div className="home-page">
+        <div className="products-page">
+          <ProductsPage />
         </div>
-      </CartContext.Provider>
-    </>
+        <div className="cart-page">
+          <Cart />
+        </div>
+      </div>
+    </CartProvider>
   );
 }
 
