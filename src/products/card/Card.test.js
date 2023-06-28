@@ -21,7 +21,6 @@ describe("card component", () => {
   };
   test("renders card component", () => {
     setup();
-    screen.debug();
     expect(screen.getByTestId("product-title")).toHaveTextContent(
       "iPhone 14 pro"
     );

@@ -1,8 +1,9 @@
+import React from "react";
 import { useContext } from "react";
-import Card from "./card/Card";
-import { CartContext } from "../provider/CartProvider";
+import Card from "../card/Card";
+import { CartContext } from "../../provider/CartProvider";
 
-function Products() {
+function ProductsList() {
   const { products, setCartItems, setProducts } = useContext(CartContext);
 
   const addToCart = (data) => {
@@ -35,4 +36,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default ProductsList;

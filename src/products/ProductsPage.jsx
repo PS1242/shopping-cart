@@ -1,5 +1,5 @@
 import styles from "./ProductsPage.module.css";
-import Products from "./Products";
+import ProductsList from "./productsList/ProductsList";
 
 function ProductsPage() {
   return (
@@ -8,7 +8,7 @@ function ProductsPage() {
         <h1>Products</h1>
       </div>
       <div className={styles.productsContainer}>
-        <Products />
+        <ProductsList />
       </div>
     </>
   );

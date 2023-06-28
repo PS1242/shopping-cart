@@ -3,7 +3,7 @@ import styles from "./Card.module.css";
 
 function Card({ data, addToCart }) {
   return (
-    <div className={styles.dataCard}>
+    <div className={styles.dataCard} data-testid="product-card">
       <div className={styles.imageContainer}>
         <img src={data.thumbnail} alt="" className={styles.productImage} />
       </div>
